@@ -3,9 +3,7 @@ var glob = require("glob");
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var extractStyle = new ExtractTextPlugin("[name].styles.css");
-var extractLESS  = new ExtractTextPlugin("[name].less.css");
-var extractCSS   = new ExtractTextPlugin("[name].sheets.css");
+var extractStyle = new ExtractTextPlugin("[name].styles.less");
 
 var entries = []
     .concat(glob.sync(__dirname+"/MODULES/**/*.js"))
@@ -36,11 +34,11 @@ module.exports = function(grunt) {
                     loaders: [
 
 
-                        { test: /\.html$/, loader: extractStyle.extract("raw", "css?-url&-import!style-block?filter=less") },
+                        { test: /\.html$/, loader: extractStyle.extract("raw", "raw!style-block?filter=less") },
                     ]
                 },
                 
-                plugins: [extractStyle,extractCSS, extractLESS]
+                plugins: [extractStyle]
             }
         },
 
@@ -52,7 +50,7 @@ module.exports = function(grunt) {
                     optimization: 2
                 },
                 files: {
-                    "dist/main.styles.css": "dist/main.styles.css" // destination file and source file
+                    "dist/main.styles.css": "dist/main.styles.less" // destination file and source file
                 }
             }
         },

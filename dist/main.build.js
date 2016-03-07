@@ -44,13 +44,18 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	(function webpackMissingModule() { throw new Error("Cannot find module \"/Applications/MAMP/htdocs/MODULES/MODULES/altro.html\""); }());
+	__webpack_require__(1);
 	__webpack_require__(2);
 	module.exports = __webpack_require__(3);
 
 
 /***/ },
-/* 1 */,
+/* 1 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
 /* 2 */
 /***/ function(module, exports) {
 
