@@ -1,0 +1,33 @@
+<style rel="stylesheet/less">
+
+    .test{
+        color: @test_variabile_less;
+    }
+
+</style>
+
+
+
+<textarea data-role="template">
+
+		<button>prova</button>
+
+
+</textarea>
+
+
+
+<script>
+
+    moduleFunctions = {
+        js_on:function(opts){
+
+            this.$().find("button").click(function(){
+                alert("bind dinamico")
+            })
+
+        }
+
+    };
+
+</script>
